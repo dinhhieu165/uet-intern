@@ -6,24 +6,27 @@
 * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
 * files in this directory. Styles in this file should be added after the last require_* statement.
 * It is generally better to create a new file per style scope.
-*
-*= require font-awesome
+*= require jquery-ui
+*= require bootstrap-select.min
+*= require responsive.css.erb
+*= require main.css.erb
+*= require chat-conversation
 *= require_tree .
 *= require_self
 */
-@import "bootstrap-sprockets";
+
 @import "bootstrap";
 @import "font-awesome";
 
 body {
     font-size: 13px;
     background-color: #ECEAE6;
-    height:100%;
 }
 
 #header nav li > a,.menu  li a {
     font-size: 14px;
     font-family: Helvetica, Arial, sans-serif;
+
 }
 html, body {
     height: 100vh;
@@ -119,14 +122,23 @@ a:hover {
     background-color:#4267B2;
     background-image: none;
 }
+html {
+    position: relative;
+}
 
-#navbar-right > li{
-    & > a, &>a:link,&>a:visited {
-        color: white;
-        background: transparent;
+#navbarSupportedContent {
+    .nav-item > a:hover {
+        background-color: purple;
     }
-    & >a.avatar-wrapper {
-        padding: 10px;
+    .dropdown-menu {
+        a,a:link,a:visited {
+            background-color: white;
+            color:black;
+        }
+        a:hover {
+            background-color: blue;
+            color: white;
+        }
     }
     &> a:hover,&a:active {
         color:#E77C26;;
@@ -185,8 +197,20 @@ label.is-invalid {
     }
 }
 
-input.is-invalid {
-    border-color: red;
+
+#page-body {
+    min-width: 1000px;
+    background-color:#F1F1F1;
+    a:link,a:visited {
+        color: rgb(0, 123, 255);
+    }
+    a:hover {
+        background: transparent!important;
+    }
+}
+
+#page-sidebar {
+    background-color:#ECF8EC;
 }
 
 .fixed-bar-right{
@@ -208,4 +232,14 @@ input.is-invalid {
 .bg-4 {
     background-color: #ffffff; /* White */
 
+}
+#footer {
+    background: #45526E;
+    color: white;
+    a,a:link {
+        color: white;
+    }
+}
+.notifying {
+  color: red !important;
 }
